@@ -52,4 +52,4 @@ production:
   <<: *default
   database: lblog_production
   username: lblog
-  password: <%= ENV["LBLOG_DATABASE_PASSWORD"] %>
+  password: reni1321
