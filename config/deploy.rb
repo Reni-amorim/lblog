@@ -2,7 +2,7 @@
 lock "~> 3.18.0"
 
 set :application, "lblog"
-set :repo_url, "git@example.com:Reni-amorim/lblog.git"
+set :repo_url, "git@github.com:Reni-amorim/lblog.git"
 
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/#{fetch :application}"
