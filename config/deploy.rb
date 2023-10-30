@@ -12,6 +12,33 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 # Only keep the last 5 releases to save disk space
 set :keep_releases, 5
 
+
+
+
+namespace :deploy do
+    desc "Make sure local git is in sync with remote."
+    task :check_revision do
+    on roles(:app) do
+    unless `git rev-parse HEAD` == `git rev-parse origin/master`
+    puts "WARNING: HEAD is not the same as origin/master"
+    puts "Run `git push` to sync changes."
+    exit
+    end
+    end
+    end
+    desc 'Create the database'
+    task :create_database do
+    on roles(:db) do
+    within release_path do
+    with rails_env: fetch(:rails_env) do
+    execute :rake, 'db:create'
+    end
+    end
+    end
+    end
+    
+    
+    before 'deploy:migrate', 'deploy:create_database'
 # Optionally, you can symlink your database.yml and/or secrets.yml file from the shared directory during deploy
 # This is useful if you don't want to use ENV variables
 # append :linked_files, 'config/database.yml', 'config/secrets.yml'
