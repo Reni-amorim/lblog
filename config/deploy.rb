@@ -12,6 +12,8 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 # Only keep the last 5 releases to save disk space
 set :keep_releases, 5
 
+# set bundle jobs
+set :bundle_jobs, 1
 
 
 
