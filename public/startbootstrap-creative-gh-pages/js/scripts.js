@@ -57,3 +57,22 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+    // Send mail
+    function sendMail() {
+        var params = {
+            from_name : document.getElementById("name").value,
+            email_id : document.getElementById("email").value,
+            phone : document.getElementById("phone").value,
+            message : document.getElementById("message").value
+        };
+        emailjs.send("service_0zn67st", "template_xne4cmq", params)
+        .then(function (res) {
+            alert("E-mail enviado!" + res.status);
+        })
+
+        .catch(function (error) {
+            console.error("Error sending email:", error);
+        });
+
+    }
