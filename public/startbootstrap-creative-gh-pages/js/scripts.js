@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded', event => {
         };
         emailjs.send("service_0zn67st", "template_xne4cmq", params)
         .then(function (res) {
-            alert("E-mail enviado!" + res.status);
+            alert("E-mail enviado!");
         })
 
         .catch(function (error) {
