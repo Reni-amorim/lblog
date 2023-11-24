@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <html lang="en">
   <head>
     <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -7,7 +8,28 @@
         <meta name="author" content="" />
         <title>Reni Desenvolvedor</title>
         <meta name="description" content="Seu lugar favorito para criar aplicativos ou websites. Websites baseados em Ruby on Rails e Bootstrap, ferramentas rápidas que estão no top 10 de programação.">
-            
+
+
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="startbootstrap-creative-gh-pages/assets/favicon2.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="startbootstrap-creative-gh-pages/css/styles.css" rel="stylesheet" />
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("XQJaTZc2fxzURphQb");
+        })();
+    </script>
+    
         
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,7 +38,16 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body id="page-top">
+    <%= render 'layouts/navbar' %>
     <%= yield %>
   </body>
+
+  <!-- Footer-->
+        <footer class="bg-light py-5">
+          
+          <%= render 'layouts/footer' %>
+        
+        </footer>
+
 </html>
